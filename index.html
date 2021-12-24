@@ -6,12 +6,17 @@
     <!-- 行動裝置支援 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
+    <!-- 網頁Title的名稱-->
     <title>BMI 計算機</title>
     
-    <
+    <!--連結外部bootstrap.css-->
     <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <!--連結外部jquare.js-->
     <script src="js/jquery-3.3.1.js"></script>
+    
+    <!--連結外部bootstrap.js-->
     <script src="js/bootstrap.js"></script>
 
     <style>
@@ -33,23 +38,31 @@
     </style>
 
     <script>
+
+    //BMI--------------------------------------------     
     $(function(){
+
+        //偵測計算按鈕被按下時
         $('#calc').click(function(){
 
+            //定義變數 h = 身高, 定義變數 w = 體重  
             var h   = $('#height').val(),
                 w   = $('#weight').val();
 
-            if( h == '' ) {
-                alert('請輸入身高');
-            } else if( w == '' ) {
+        
+            if( h == '' ) {           //判斷身高輸入是否為空值
+                alert('請輸入身高');   
+            } else if( w == '' ) {    //判斷體重輸入是否為空值
                 alert('請輸入體重');
             } else if( h > 3 ) {
-                alert('身高請輸入公尺');
+                alert('身高請輸入公尺'); //判斷身高是否超過3公尺的高
             } else {
+
+                // bmi的公式 = 體重(w) / (身高(h) * 身高(h) )
                 var bmi = w / ( h * h );
-                $('#result').val(formatFloat(bmi, 2));
-                $('#height').val('');
-                $('#weight').val('');
+                $('#result').val(formatFloat(bmi, 2));  //取得欄位result的值並且轉化成float小數點後兩位
+                $('#height').val('');   //將身高的欄位清除為空
+                $('#weight').val('');   //將體重的欄位清除為空
             }
 
         });
@@ -59,6 +72,46 @@
       var size = Math.pow(10, pos);
       return Math.round(num * size) / size;
     }
+
+    //BMI-----------------
+
+    //體脂率計算------------------------------------------
+    $(function(){
+               
+        $('#bmp_calc').click(function(){
+
+        var bmp_h = $('#bmp_height').val();
+        var bmp_w = $('#bmp_weight').val();
+        var bmp_age = $('#bmp_age').val();
+        
+        if(bmp_h == ''){
+           alert('請輸入身高'); 
+        }else if(bmp_w == ''){
+           alert('請輸入體重'); 
+        }else if(bmp_age == ''){
+           alert('請輸入年齡'); 
+        }else{
+          
+            var bmp_bmi = bmp_w / (bmp_h * bmp_h);
+            var bmp_result = (1.2 * bmp_bmi) + (0.23 * bmp_age) - 16.2;
+            $('#bmp_result').val(formatFloat(bmp_result,2));
+            $('#bmp_height').val('');
+            $('#bmp_weight').val('');
+            $('#bmp_age').val('');
+
+        }
+        
+        
+        });
+
+    function formatFloat(num, pos) {
+    var size = Math.pow(10, pos);
+    return Math.round(num * size) / size;
+    }
+
+
+    });
+
     </script>
 
 </head>
