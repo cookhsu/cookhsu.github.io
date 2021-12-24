@@ -42,7 +42,7 @@
                   alert('請輸入年齡');
                 }else{
                     var bmi = w / ( h * h);
-                    var bmp = (1.2 * bmi) + (0.16 * a) - 16.2;     
+                    var bmp = (1.2 * bmi) + (0.16 * a) - (16.2);     
                     $('#result').val(formatFloat(bmp, 2));
                     $('#height').val('');
                     $('#weight').val('');
@@ -128,7 +128,7 @@
             </div>
         </div>
 
-        
+
         <div class="col-md-3 box">
 
             <div class="form-group">
