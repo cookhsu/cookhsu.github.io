@@ -1,9 +1,132 @@
-<h1>Hello My Wotld</h1>
-<h1>Hello My Wotld</h1>
-<h1>Hello My Wotld</h1>
-<h1>Hello My Wotld</h1>
+<!DOCTYPE html>
+<html>
 
-<h1>i am iron man</h1>
+<head>
+    <meta charset="UTF-8">
+    <!-- 行動裝置支援 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h1>mary love bobdddddddddddo</h1>
+    <title>BMI 計算機</title>
 
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    <style>
+        .box {
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+        }
+
+        .button-box {
+            padding-top: 44.5px;
+        }
+    </style>
+    
+    <script>
+            $(function(){
+              $('#calc').click(function(){
+                
+                var h = $('#height').val();
+                var w = $('#weight').val();
+                
+                if(h == ''){
+                  alert('請輸入身高');
+                }else if(w == ''){
+                  alert('請輸入體重')
+                }else{
+                    var bmi = w / ( h * h);
+                    $('#result').val(formatFloat(bmi, 2));
+                    $('#height').val('');
+                    $('#weight').val('');
+                    
+                } 
+
+              })
+            
+            })
+           
+            function formatFloat(num, pos) {
+            var size = Math.pow(10, pos);
+            return Math.round(num * size) / size;
+    }
+
+
+    </script>
+
+
+
+
+</head>
+
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">BMI 計算機</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://hahow.in">About</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="row">
+
+        <div class="col-md-4 box">
+            <div class="form-group">
+                <label for="height">請輸入身高(m)</label>
+                <input type="number" class="form-control" id="height" placeholder="身高">
+            </div>
+        </div>
+
+        <div class="col-md-4 box">
+            <div class="form-group">
+                <label for="weight">請輸入體重(kg))</label>
+                <input type="number" class="form-control" id="weight" placeholder="體重">
+            </div>
+        </div>
+
+        <div class="col-md-1 button-box">
+            <div class="form-group">
+                <button type="button" id="calc" class="btn btn-default">計算</button>
+            </div>
+        </div>
+
+        <div class="col-md-3 box">
+
+            <div class="form-group">
+                <label for="result">您的 BMI</label>
+                <input type="number" class="form-control" id="result" readonly="true">
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    
+
+</body>
+
+
+
+</html>
