@@ -26,28 +26,28 @@
     </style>
     
     <script>
-            $(function(){
-              $('#calc').click(function(){
-                
-                var h = $('#height').val();
-                var w = $('#weight').val();
-                
-                if(h == ''){
-                  alert('請輸入身高');
-                }else if(w == ''){
-                  alert('請輸入體重')
-                }else{
-                    var bmi = w / ( h * h);
-                    $('#result').val(formatFloat(bmi, 2));
-                    console.log(bmi)
-                    $('#height').val('');
-                    $('#weight').val('');
-                    
-                } 
+            $(function () {
+                    $('#calc').click(function () {
 
-              })
-            
-            })
+                        var h = $('#height').val();
+                        var w = $('#weight').val();
+
+                        if (h == '') {
+                            alert('請輸入身高');
+                        } else if (w == '') {
+                            alert('請輸入體重')
+                        } else {
+                            var bmi = w / (h * h);
+                            $('#result').val(formatFloat(bmi, 2));
+                            console.log(bmi)
+                            $('#height').val('');
+                            $('#weight').val('');
+
+                        }
+
+                    })
+
+                })
            
             function formatFloat(num, pos) {
             var size = Math.pow(10, pos);
