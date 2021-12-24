@@ -77,22 +77,28 @@
 
     //體脂率計算------------------------------------------
     $(function(){
-               
+        
+        //偵測計算按鈕被按下時
         $('#bmp_calc').click(function(){
 
-        var bmp_h = $('#bmp_height').val();
+        //定義變數 bmp_h = 身高, 定義變數 bmp_w = 體重, bmp_age =年齡
+
+        var bmp_h = $('#bmp_height').val(); 
         var bmp_w = $('#bmp_weight').val();
         var bmp_age = $('#bmp_age').val();
         
-        if(bmp_h == ''){
+        if(bmp_h == ''){         //判斷身高輸入是否為空值
            alert('請輸入身高'); 
-        }else if(bmp_w == ''){
+        }else if(bmp_w == ''){   //判斷體重輸入是否為空值
            alert('請輸入體重'); 
-        }else if(bmp_age == ''){
+        }else if(bmp_age == ''){ //判斷年齡輸入是否為空值 
            alert('請輸入年齡'); 
         }else{
-          
+            
+            //定義 bmp_bmi = 體重(bmp_w) / 身高(bmp_h) * 身高(bmp_h)  
             var bmp_bmi = bmp_w / (bmp_h * bmp_h);
+            
+            //定義 bmp_result  = (1.2 * bmp_bmi) + (0.23 * 年齡(bmp_age)) - 16.2
             var bmp_result = (1.2 * bmp_bmi) + (0.23 * bmp_age) - 16.2;
             $('#bmp_result').val(formatFloat(bmp_result,2));
             $('#bmp_height').val('');
