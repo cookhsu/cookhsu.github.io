@@ -39,6 +39,7 @@
                 }else{
                     var bmi = w / ( h * h);
                     $('#result').val(formatFloat(bmi, 2));
+                    console.log(bmi)
                     $('#height').val('');
                     $('#weight').val('');
                     
@@ -122,9 +123,6 @@
                 <input type="number" class="form-control" id="result" readonly="true">
             </div>
         </div>
-
-
-
 
     </div>
 

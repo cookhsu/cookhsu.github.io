@@ -52,7 +52,7 @@
             var size = Math.pow(10, pos);
             return Math.round(num * size) / size;
     }
-
+            
 
     </script>
 
@@ -95,19 +95,28 @@
 
     <div class="row">
 
-        <div class="col-md-4 box">
+        <div class="col-md-2 box">
             <div class="form-group">
                 <label for="height">請輸入身高(m)</label>
                 <input type="number" class="form-control" id="height" placeholder="身高">
             </div>
         </div>
 
-        <div class="col-md-4 box">
+        <div class="col-md-2 box">
             <div class="form-group">
                 <label for="weight">請輸入體重(kg))</label>
                 <input type="number" class="form-control" id="weight" placeholder="體重">
             </div>
         </div>
+
+        <div class="col-md-2 box">
+            <div class="form-group">
+                <label for="age">請輸入年齡(age)</label>
+                <input type="number" class="form-control" id="age" placeholder="年齡">
+            </div>
+        </div>
+        
+
 
         <div class="col-md-1 button-box">
             <div class="form-group">
@@ -118,7 +127,7 @@
         <div class="col-md-3 box">
 
             <div class="form-group">
-                <label for="result">您的 BMI</label>
+                <label for="result">您的 體脂率是</label>
                 <input type="number" class="form-control" id="result" readonly="true">
             </div>
         </div>
