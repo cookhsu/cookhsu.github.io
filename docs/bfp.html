@@ -26,8 +26,10 @@
     </style>
     
     <script>
-            $(function(){
-              $('#calc').click(function(){
+            $(function()
+            {
+              $('#calc').click(function()
+              {
                 
                 var h = $('#height').val();
                 var w = $('#weight').val();
@@ -36,11 +38,18 @@
                 
                 if(h == ''){
                   alert('請輸入身高');
-                }else if(w == ''){
+                
+                }else if(w == '')
+                {
                   alert('請輸入體重');
-                }else if(a == ''){
+                
+                }else if(a == '')
+                {
                   alert('請輸入年齡');
-                }else{
+                
+                }else
+                
+                {
                     var bmi = w / ( h * h);
                     var bmp = (1.2 * bmi) + (0.16 * a) - (16.2);     
                     $('#result').val(formatFloat(bmp, 2));
@@ -54,10 +63,11 @@
             
             })
            
-            function formatFloat(num, pos) {
+            function formatFloat(num, pos) 
+            {
             var size = Math.pow(10, pos);
             return Math.round(num * size) / size;
-    }
+            }
             
 
     </script>
